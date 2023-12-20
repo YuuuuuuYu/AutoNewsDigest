@@ -2,15 +2,14 @@ import os
 from google.cloud import bigquery
 
 # Secret
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS', '{}')
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS', '{}')
 
 # Query Parameter
 start_diff = os.environ.get('START_DIFF', '1')
 end_diff = os.environ.get('END_DIFF', '0')
 
 # test print
-print(os.environ)
-print('os2: ' + os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
+print(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
 print('start: ' + start_diff)
 print('end: ' + end_diff)
 
