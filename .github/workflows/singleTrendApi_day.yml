@@ -11,11 +11,15 @@ jobs:
     env:
       START_DIFF: '1'
       END_DIFF: '0'
-      GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
     steps:
     - uses: actions/checkout@v2
 
+    - name: Setup GCP Credentials
+      run: |
+        echo "${{ secrets.SERVICE_ACCOUNT_KEY }}" > SERVICE_ACCOUNT_KEY.json
+        export GOOGLE_APPLICATION_CREDENTIALS=SERVICE_ACCOUNT_KEY.json
+        
     - name: Set up Python 3.x
       uses: actions/setup-python@v2
       with:
