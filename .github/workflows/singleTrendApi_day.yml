@@ -11,7 +11,7 @@ jobs:
     env:
       START_DIFF: '1'
       END_DIFF: '0'
-      SERVICE_ACCOUNT_KEY: ${{ env.SERVICE_ACCOUNT_KEY }}
+      SERVICE_ACCOUNT_KEY: ${{ SERVICE_ACCOUNT_KEY }}
 
     steps:
     - uses: actions/checkout@v2
