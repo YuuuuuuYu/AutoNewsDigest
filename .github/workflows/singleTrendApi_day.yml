@@ -11,6 +11,7 @@ jobs:
     env:
       START_DIFF: '1'
       END_DIFF: '0'
+      GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.SERVICE_ACCOUNT_KEY }}
 
     steps:
     - uses: actions/checkout@v2
@@ -27,6 +28,4 @@ jobs:
         pip install google-cloud-bigquery
 
     - name: Run googleTrendTopTerms.py
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.SERVICE_ACCOUNT_KEY }}
       run: python google/api/googleTrendTopTerms.py
