@@ -17,7 +17,7 @@ jobs:
 
     - name: Setup GCP Credentials
       run: |
-        echo "${{ secrets.SERVICE_ACCOUNT_KEY }}" > SERVICE_ACCOUNT_KEY.json
+        echo "${{ env.SERVICE_ACCOUNT_KEY }}" > SERVICE_ACCOUNT_KEY.json
         export GOOGLE_APPLICATION_CREDENTIALS=SERVICE_ACCOUNT_KEY.json
         
     - name: Set up Python 3.x
