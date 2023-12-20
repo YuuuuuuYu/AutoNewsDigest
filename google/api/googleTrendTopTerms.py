@@ -2,7 +2,7 @@ import os
 from google.cloud import bigquery
 
 # Secret
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'SERVICE_ACCOUNT_KEY.json'
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ.get('SERVICE_ACCOUNT_KEY', '{}')
 
 # Query Parameter
 start_diff = os.environ.get('START_DIFF', '1')
