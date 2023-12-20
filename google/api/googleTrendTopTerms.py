@@ -9,7 +9,7 @@ start_diff = os.environ.get('START_DIFF', '1')
 end_diff = os.environ.get('END_DIFF', '0')
 
 # test print
-print(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
+print(os.environ)
 print('start: ' + start_diff)
 print('end: ' + end_diff)
 
