@@ -1,17 +1,9 @@
 import os
 from google.cloud import bigquery
 
-# Secret
-#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ.get('SERVICE_ACCOUNT_KEY', '{}')
-
 # Query Parameter
 start_diff = os.environ.get('START_DIFF', '1')
 end_diff = os.environ.get('END_DIFF', '0')
-
-# test print
-print(os.environ)
-print('start: ' + start_diff)
-print('end: ' + end_diff)
 
 # Create BigQuery Client
 client = bigquery.Client()
