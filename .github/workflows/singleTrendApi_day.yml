@@ -27,5 +27,10 @@ jobs:
         pip install google-api-python-client
         pip install google-cloud-bigquery
 
+    - name: Set up GCP Credentials
+      run: |
+        echo '${{ secrets.SERVICE_ACCOUNT_KEY }}' > /tmp/gcp-key.json
+        echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp-key.json"
+
     - name: Run googleTrendTopTerms.py
       run: python google/api/googleTrendTopTerms.py
